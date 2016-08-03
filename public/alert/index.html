@@ -1,0 +1,4 @@
+<div *ngFor="let alert of alerts; let i = index" class="flash flash-{{alert.type}} flash-with-icon" role="alert">
+    <span class="octicon octicon-x flash-close js-flash-close" data-dismiss="alert" (click)="remove(i)"><span aria-hidden="true">&times;</span></span>
+    {{alert.message}}
+</div>

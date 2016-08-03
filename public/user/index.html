@@ -1,0 +1,61 @@
+<!-- Form -->
+<div class="logo text-center">
+    <h2>LOGO</h2>
+</div>
+<div class="user-form">
+    <div class="user-form-header text-center">
+        <h1>{{signup ? 'Sign up' : 'Sign in'}} to Platform</h1>
+    </div>
+
+    <div id="signup-container">
+        <form *ngIf="!user._id" (ngSubmit)="submit()" novalidate class="form-group">
+
+            <dl class="form-group">
+                <dt>Email address</dt>
+                <dd><input type="email" id="email" class="form-control input-contrast" [(ngModel)]="user.email"/></dd>
+            </dl>
+
+            <dl class="form-group">
+                <dt>Password <a href="" class="label-link">Forgot password?</a> </dt>
+                <dd><input type="password" id="password" class="form-control input-contrast" [(ngModel)]="user.password"/></dd>
+            </dl>
+            <button type="submit" class="btn btn-primary w-100 mt-3">{{signup ? 'Sign up' : 'Sign in'}}</button>
+        </form>
+    </div>
+
+    <div class="fine-border mt-3" *ngIf="signup">
+        <dd>Already have an account?  <a [routerLink]="['UserSignin']">Log in.</a> </dd>
+    </div>
+    <div class="fine-border mt-3" *ngIf="!signup">
+        <dd>Don't have an account?  <a [routerLink]="['User', { 'action': 'signup' }]">Create one.</a> </dd>
+    </div>
+</div>
+
+<button class="ui-button centered" (click)="signout()">SIGN OUT</button>
+
+<!-- Profile ends -->
+<div class="user-form mt-3">
+    <alerts></alerts>
+</div>
+
+<div class="text-center">
+    <div class="site-footer">
+        <ul class="site-footer-links">
+            <li>
+                <a href="">Terms</a>
+            </li>
+
+            <li>
+                <a href="">Privacy</a>
+            </li>
+
+            <li>
+                <a href="">Security</a>
+            </li>
+
+            <li>
+                <a href="">Contact</a>
+            </li>
+        </ul>
+    </div>
+</div>

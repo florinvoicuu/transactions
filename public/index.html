@@ -1,0 +1,58 @@
+
+<html>
+<head>
+    <title>Medical - Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base href="/">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="primer-css/build/build.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/web.css">
+    <link rel="stylesheet" href="octicons/build/font/octicons.min.css">
+
+
+
+    <!-- 1. Load libraries -->
+    <!-- Configure SystemJS -->
+    <script src="systemjs/dist/system.js"></script>
+    <script>
+        System.config({
+            defaultJSExtensions: true,
+            map: {
+                'angular2':         'node_modules/angular2',
+                'angular2-cookie':  'node_modules/angular2-cookie',
+                'es6-shim':         'node_modules/es6-shim',
+                'reflect-metadata': 'node_modules/reflect-metadata',
+                'rxjs':             'node_modules/rxjs',
+                'traceur':          'node_modules/traceur/dist/commonjs/traceur.js',
+
+                /* Other libraries (System.js) */
+                'underscore':       'node_modules/underscore/underscore-min.js'
+            }
+        });
+    </script>
+
+    <!-- Angular libraries -->
+    <script src="es6-shim/es6-shim.min.js"></script>
+    <script src="angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+    <script src="angular2/bundles/angular2-polyfills.min.js"></script>
+    <script src="rxjs/bundles/Rx.min.js"></script>
+    <script src="angular2/bundles/angular2.min.js"></script>
+    <script src="angular2/bundles/router.min.js"></script>
+    <script src="angular2/bundles/http.min.js"></script>
+    <script src="angular2-cookie/bundles/angular2-cookie.min.js"></script>
+
+    <!-- Other libraries -->
+    <script src="jquery/dist/jquery.min.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.import('main').then(null, console.error.bind(console));
+    </script>
+</head>
+<!-- 3. Display the application -->
+<body>
+<app></app>
+</body>
+</html>
