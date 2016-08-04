@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', 'angular2/http', 'angular2-cookie/core', '../alert/component', '../user/component', '../common/extensions', '../common/utilities', '../product/edit/component', "../product/list/component", '../product/view/component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', 'angular2/http', 'angular2-cookie/core', '../alert/component', '../user/component', '../common/extensions', '../common/utilities', '../product/edit/component', "../product/list/component", '../product/view/component', "../transaction/component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'angular2-
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, http_1, core_2, component_1, component_2, extensions_1, utilities_1, component_3, component_4, component_5;
+    var core_1, router_1, http_1, core_2, component_1, component_2, extensions_1, utilities_1, component_3, component_4, component_5, component_6;
     var AppComponent;
     return {
         setters:[
@@ -46,6 +46,9 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'angular2-
             },
             function (component_5_1) {
                 component_5 = component_5_1;
+            },
+            function (component_6_1) {
+                component_6 = component_6_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -94,6 +97,11 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'angular2-
                             path: '/product/:id',
                             name: 'Product',
                             component: component_5.ProductComponent,
+                        },
+                        {
+                            path: '/transaction',
+                            name: 'Transaction',
+                            component: component_6.TransactionComponent,
                         }
                     ]), 
                     __metadata('design:paramtypes', [component_2.UserService])

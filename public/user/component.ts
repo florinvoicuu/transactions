@@ -37,14 +37,14 @@ export class UserComponent implements OnInit {
         this._observable.subscribe(this._user.create(this.user), user => {
             this._user.user = user;
             this._alert.add(new Alert('success', 'Felicitari, te-ai inregistrat!'));
-           // this._router.navigate(['Doctor', 'Profile']);
+            this._router.navigate(['Products']);
         });
     }
 
     signin () {
         this._observable.subscribe(this._user.signin(this.user), user => {
             this._user.user = user;
-            //this._router.navigate(['Doctor', 'Profile']);
+            this._router.navigate(['Products']);
         });
     }
 

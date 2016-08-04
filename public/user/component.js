@@ -50,14 +50,14 @@ System.register(['angular2/core', 'angular2/router', '../alert/component', '../c
                     this._observable.subscribe(this._user.create(this.user), function (user) {
                         _this._user.user = user;
                         _this._alert.add(new component_1.Alert('success', 'Felicitari, te-ai inregistrat!'));
-                        // this._router.navigate(['Doctor', 'Profile']);
+                        _this._router.navigate(['Products']);
                     });
                 };
                 UserComponent.prototype.signin = function () {
                     var _this = this;
                     this._observable.subscribe(this._user.signin(this.user), function (user) {
                         _this._user.user = user;
-                        //this._router.navigate(['Doctor', 'Profile']);
+                        _this._router.navigate(['Products']);
                     });
                 };
                 UserComponent.prototype.signout = function () {

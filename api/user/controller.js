@@ -19,8 +19,7 @@ module.exports = {
     create: coe(function *(req, res) {
         let user = yield User.create({
             email: sanitize(req.body.email),
-            password: req.body.password,
-            color: sanitize(req.body.color)
+            password: req.body.password
         });
 
         res.cookie('jwt', jwt.sign({ _id: user._id }, config.session_secret, { expiresIn: 5 * 60 * 60 }));

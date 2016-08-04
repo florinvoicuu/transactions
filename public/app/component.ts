@@ -7,11 +7,11 @@ import { AlertComponent, Alerts } from '../alert/component';
 import { UserComponent, UserService } from '../user/component';
 
 import { ExtendedRequestOptions } from '../common/extensions';
-import { ObservableUtilities } from '../common/utilities';/*
-import {ProductService} from "../product/service";*/
+import { ObservableUtilities } from '../common/utilities';
 import { ProductEditComponent } from '../product/edit/component';
 import { ProductListComponent } from "../product/list/component";
 import { ProductComponent } from '../product/view/component';
+import {TransactionComponent} from "../transaction/component";
 
 
 @Component({
@@ -26,7 +26,6 @@ import { ProductComponent } from '../product/view/component';
         provide(Alerts, { useValue: [] }),
         AlertComponent,
         ObservableUtilities,
-        //ProductService
     ]
 })
 @RouteConfig([
@@ -54,7 +53,13 @@ import { ProductComponent } from '../product/view/component';
         path: '/product/:id',
         name: 'Product',
         component: ProductComponent,
+    },
+    {
+        path: '/transaction',
+        name: 'Transaction',
+        component: TransactionComponent,
     }
+
 ])
 export class AppComponent {
     constructor(private _user: UserService) {
