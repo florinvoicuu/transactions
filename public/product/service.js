@@ -33,22 +33,26 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', '../common/utiliti
                     this._uri = "/api/product";
                 }
                 ProductService.prototype.create = function (product) {
+                    //noinspection TypeScriptUnresolvedFunction
                     return this._http.post(this._uri, JSON.stringify(product))
                         .map(this._observable.json)
                         .catch(this._observable.error);
                 };
                 ProductService.prototype.retrieve = function (id) {
                     if (id === void 0) { id = ''; }
+                    //noinspection TypeScriptUnresolvedFunction
                     return this._http.get(this._uri + "/" + id)
                         .map(this._observable.json)
                         .catch(this._observable.error);
                 };
                 ProductService.prototype.update = function (product) {
+                    //noinspection TypeScriptUnresolvedFunction
                     return this._http.put(this._uri + "/" + product._id, JSON.stringify(product))
                         .map(this._observable.json)
                         .catch(this._observable.error);
                 };
                 ProductService.prototype.delete = function (id) {
+                    //noinspection TypeScriptUnresolvedFunction
                     return this._http.delete(this._uri + "/" + id)
                         .catch(this._observable.error);
                 };
@@ -68,6 +72,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', '../common/utiliti
                         }
                     }
                     options.search.setAll(urlSearchParams);
+                    //noinspection TypeScriptUnresolvedFunction
                     return this._http.get("" + this._uri, options)
                         .map(function (res) {
                         list.items = res.json();

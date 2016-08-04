@@ -73,6 +73,7 @@ declare module _ {
 	}
 }
 
+//noinspection JSAnnotator
 interface UnderscoreStatic {
 	/**
 	* Underscore OOP Wrapper, all Underscore functions that take an object

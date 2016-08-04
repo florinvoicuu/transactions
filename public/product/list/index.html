@@ -1,0 +1,27 @@
+<div id="Articles">
+    <form (ngSubmit)="search()">
+        <div class="ui-40 ui-input">
+            <input type="text" class="form-control" [(ngModel)]="list.params.name" placeholder="Search"/>
+        </div>
+    </form>
+
+    <!--<pagination *ngIf="list.pages > 1" [(list)]="list" (change)="page($event)" class="article-pagination text-center"></pagination>-->
+
+    <div class="article" *ngFor="let product of list.items">
+        <div class="article-main">
+            <div class="article-images" [hidden]="!product.image">
+                <a [routerLink]="['Product', { id: product._id }]"><img [src]="product.image" style="margin:auto;"/></a>
+            </div>
+
+            <header class="article-title">
+                <h1 class="article-title-header"><a [routerLink]="['Product', { id: product._id }]" [innerHTML]="product.name"></a></h1>
+                <!--<div class="article-meta" ng-show="article.title" style="float: left">
+                  <span class="author-time"><span am-time-ago="article.created"></span> de <span class="orange" ng-bind="article.author.name"></span></span>
+                </div>-->
+                <div [innerHTML]="product.description"></div>
+            </header>
+        </div>
+    </div>
+
+    <div class="article-main text-center" *ngIf="list.items.length === 0"><h3>No products found!</h3></div>
+</div>

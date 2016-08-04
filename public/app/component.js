@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', 'angular2/http', 'angular2-cookie/core', '../alert/component', '../user/component', '../common/extensions', '../common/utilities', "../product/component", "../product/service"], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', 'angular2/http', 'angular2-cookie/core', '../alert/component', '../user/component', '../common/extensions', '../common/utilities', '../product/edit/component', "../product/list/component", '../product/view/component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'angular2-
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, http_1, core_2, component_1, component_2, extensions_1, utilities_1, component_3, service_1;
+    var core_1, router_1, http_1, core_2, component_1, component_2, extensions_1, utilities_1, component_3, component_4, component_5;
     var AppComponent;
     return {
         setters:[
@@ -41,8 +41,11 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'angular2-
             function (component_3_1) {
                 component_3 = component_3_1;
             },
-            function (service_1_1) {
-                service_1 = service_1_1;
+            function (component_4_1) {
+                component_4 = component_4_1;
+            },
+            function (component_5_1) {
+                component_5 = component_5_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -64,7 +67,6 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'angular2-
                             core_1.provide(component_1.Alerts, { useValue: [] }),
                             component_1.AlertComponent,
                             utilities_1.ObservableUtilities,
-                            service_1.ProductService
                         ]
                     }),
                     router_1.RouteConfig([
@@ -78,11 +80,20 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'angular2-
                             name: 'UserSignin',
                             component: component_2.UserComponent,
                             useAsDefault: true
+                        }, {
+                            path: '/product/:id/edit',
+                            name: 'ProductEdit',
+                            component: component_3.ProductEditComponent,
                         },
                         {
                             path: '/products',
                             name: 'Products',
-                            component: component_3.ProductListComponent
+                            component: component_4.ProductListComponent,
+                        },
+                        {
+                            path: '/product/:id',
+                            name: 'Product',
+                            component: component_5.ProductComponent,
                         }
                     ]), 
                     __metadata('design:paramtypes', [component_2.UserService])

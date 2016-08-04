@@ -44,7 +44,7 @@ export class UserComponent implements OnInit {
     signin () {
         this._observable.subscribe(this._user.signin(this.user), user => {
             this._user.user = user;
-            this._router.navigate(['Doctor', 'Profile']);
+            //this._router.navigate(['Doctor', 'Profile']);
         });
     }
 

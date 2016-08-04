@@ -57,7 +57,7 @@ System.register(['angular2/core', 'angular2/router', '../alert/component', '../c
                     var _this = this;
                     this._observable.subscribe(this._user.signin(this.user), function (user) {
                         _this._user.user = user;
-                        _this._router.navigate(['Doctor', 'Profile']);
+                        //this._router.navigate(['Doctor', 'Profile']);
                     });
                 };
                 UserComponent.prototype.signout = function () {

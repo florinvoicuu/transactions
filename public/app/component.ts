@@ -7,9 +7,12 @@ import { AlertComponent, Alerts } from '../alert/component';
 import { UserComponent, UserService } from '../user/component';
 
 import { ExtendedRequestOptions } from '../common/extensions';
-import { ObservableUtilities } from '../common/utilities';
-import { ProductListComponent } from "../product/component";
-import {ProductService} from "../product/service";
+import { ObservableUtilities } from '../common/utilities';/*
+import {ProductService} from "../product/service";*/
+import { ProductEditComponent } from '../product/edit/component';
+import { ProductListComponent } from "../product/list/component";
+import { ProductComponent } from '../product/view/component';
+
 
 @Component({
     selector: 'app',
@@ -23,7 +26,7 @@ import {ProductService} from "../product/service";
         provide(Alerts, { useValue: [] }),
         AlertComponent,
         ObservableUtilities,
-        ProductService
+        //ProductService
     ]
 })
 @RouteConfig([
@@ -37,11 +40,20 @@ import {ProductService} from "../product/service";
         name: 'UserSignin',
         component: UserComponent,
         useAsDefault: true
+    },{
+        path: '/product/:id/edit',
+        name: 'ProductEdit',
+        component: ProductEditComponent,
     },
     {
         path: '/products',
         name: 'Products',
-        component: ProductListComponent
+        component: ProductListComponent,
+    },
+    {
+        path: '/product/:id',
+        name: 'Product',
+        component: ProductComponent,
     }
 ])
 export class AppComponent {

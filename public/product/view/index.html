@@ -1,0 +1,27 @@
+<div class="article">
+    <article class="article-main animate-show">
+        <div id="sharebar" class="text-center">
+            <div class="fb-like" [attr.data-href]="href()" data-layout="box_count" data-action="like" data-share="true"></div>
+
+            <div class="vote-panel" *ngIf="user._id">
+                <a class="btn btn-up" [routerLink]="['ProductEdit', { id: product._id }]"><i class="fa fa-edit fa-2x blue"></i></a>
+                <a class="btn btn-up" (click)="delete()"><i class="fa fa-trash fa-2x red"></i></a>
+            </div>
+        </div>
+
+        <header class="article-title">
+            <h1 class="article-title-header">{{product.name}}</h1>
+            <div class="article-meta" *ngIf="product.name">
+                <span class="author-time"><span>{{product.created}}</span></span>
+            </div>
+        </header>
+
+        <alerts></alerts>
+
+        <div class="article-images">
+            <img [src]="product.image" style="margin:auto;"/>
+        </div>
+
+        <div class="article-content" [innerHTML]="product.description"></div>
+    </article>
+</div>

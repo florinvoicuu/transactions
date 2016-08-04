@@ -1,0 +1,40 @@
+<div class="article">
+    <div class="ui-input" style="margin: 21px 0;">
+        <input type="text" class="form-control text-center" [(ngModel)]="product.name" placeholder="TITLE">
+    </div>
+
+    <div class="ui-input" style="margin-top: 21px;">
+        <input type="text" class="form-control" [(ngModel)]="product.image" placeholder="SLIDE IMAGES (links with a comma in between | linkuri cu virgula)" ng-list>
+    </div>
+
+    <div class="ui-input" style="margin-top: 21px;">
+        <input type="text" class="form-control" [(ngModel)]="product.description" placeholder="Description">
+    </div>
+
+    <div class="ui-input" style="margin-top: 21px;">
+        <input class="form-control panel-input" id="service_cost" name="service-cost" size="30" type="number" [(ngModel)]="product.cost">
+    </div>
+
+    <div class="file-input btn btn-block btn-primary btn-file bg-lblue">
+        <input id="Submit" (click)="submit()">Submit</input>
+    </div>
+
+    <alerts></alerts>
+
+    <div *ngIf="product.name" class="article-main">
+        <div class="article-title">
+            <h1 class="article-title-header">{{product.name}}</h1>
+        </div>
+
+        <div class="article-meta">
+            <span class="author-time"><span>{{product.created || 'being created'}}</span> by <span class="orange">{{user.name}}</span></span>
+        </div>
+
+        <div class="article-images">
+            <img [src]="product.image" style="margin:auto;"/>
+        </div>
+
+
+        <div class="article-content" [innerHTML]="product.description"></div>
+    </div>
+</div>

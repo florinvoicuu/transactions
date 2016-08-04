@@ -17,24 +17,28 @@ export class ProductService {
     ) {}
 
     create (product: Product): Observable<Product> {
+        //noinspection TypeScriptUnresolvedFunction
         return this._http.post(this._uri, JSON.stringify(product))
             .map(this._observable.json)
             .catch(this._observable.error);
     }
 
     retrieve (id: string = ''): Observable<Product> {
+        //noinspection TypeScriptUnresolvedFunction
         return this._http.get(`${this._uri}/${id}`)
             .map(this._observable.json)
             .catch(this._observable.error);
     }
 
     update (product: Product): Observable<Product> {
+        //noinspection TypeScriptUnresolvedFunction
         return this._http.put(`${this._uri}/${product._id}`, JSON.stringify(product))
             .map(this._observable.json)
             .catch(this._observable.error);
     }
 
     delete (id: string): Observable<Response> {
+        //noinspection TypeScriptUnresolvedFunction
         return this._http.delete(`${this._uri}/${id}`)
             .catch(this._observable.error);
     }
@@ -60,6 +64,7 @@ export class ProductService {
 
         options.search.setAll(urlSearchParams);
 
+        //noinspection TypeScriptUnresolvedFunction
         return this._http.get(`${this._uri}`, options)
             .map(res => {
                 list.items = res.json();
